@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // First card data
-char estado[10];
+char estado[4];
 char codigo[4];
 char nomeCidade[50];
 int populacao;
@@ -10,7 +10,7 @@ float pib;
 int pontosTuristicos;
 
 // Second card data
-char estado2;
+char estado2[4];
 char codigo2[4];
 char nomeCidade2[50];
 int populacao2;
@@ -23,8 +23,8 @@ void entradaDados()
   printf("Cadastre a primeira carta!\n");
 
   // Solicita os dados da primeira carta
-  printf("Digite a letra do estado (de A a H): ");
-  scanf(" %c", estado);
+  printf("Digite o estado: ");
+  scanf(" %s", estado);
 
   printf("Digite a o código da carta (Ex.: A01): ");
   scanf("%s", codigo);
@@ -47,8 +47,8 @@ void entradaDados()
   printf("Primeira carta registrada com sucesso! Agora cadastre a segunda carta.\n");
 
   // Solicita os dados da segunda carta
-  printf("\nDigite a letra do estado (de A a H): ");
-  scanf(" %c", &estado2);
+  printf("\nDigite o estado: ");
+  scanf(" %s", estado2);
 
   printf("Digite o código da carta (Ex.: A01): ");
   scanf("%s", codigo2);
@@ -104,7 +104,7 @@ void exibirDados()
   printf("PIB per capita: %.2f reais\n", calcularPibPerCapita(pib, (float)populacao));
 
   printf("\nCarta 2:\n");
-  printf("Estado: %c\n", estado2);
+  printf("Estado: %s\n", estado2);
   printf("Código: %s\n", codigo2);
   printf("Cidade: %s\n", nomeCidade2);
   printf("População: %d\n", populacao2);
@@ -119,16 +119,17 @@ void exibirDados()
 
 void exibirCartaVencedora()
 {
-  printf("Comparação das cartas:\n");
+  printf("Comparação das cartas(Atributo: População):\n");
+  printf("Carta 1 - %s (%s) População: %d\n", nomeCidade, estado, populacao);
+  printf("Carta 2 - %s (%s) População: %d\n", nomeCidade2, estado2, populacao2);
 
-  // Compara o atributo "população" das cartas
   if (populacao > populacao2)
   {
-    printf("Carta 1 venceu!\n");
+    printf("Carta 1 (%s) venceu!\n", nomeCidade);
   }
   else if (populacao < populacao2)
   {
-    printf("Carta 2 venceu!\n");
+    printf("Carta 2 (%s) venceu!\n", nomeCidade2);
   }
   else
   {
