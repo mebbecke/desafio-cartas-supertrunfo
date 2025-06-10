@@ -155,6 +155,6 @@ Carta 2:
 # Instruções
 Para compilar e rodar o projeto:
 ```bash
-gcc superTrunfo.c -o superTrunfo
-./superTrunfo
+gcc superTrunfoCartas.c -o superTrunfoCartas
+./superTrunfoCartas
 ```
