@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int casas;
-char direcao[3];
+int casas = 5;         // Definindo as casas diretamente no código
+char direcao[3] = "c"; // Definindo a direção diretamente no código
 
 void moverTorre(int casas, char *direcao)
 {
@@ -126,17 +126,18 @@ void moverRainha(int casas, char *direcao)
   }
 }
 
-void entradaDados() // Registra o valor das casas e da direção pelo usuário
-{
-  printf("Digite o número de casas: ");
-  scanf("%i", &casas);
-  printf("Digite a direção (c = cima, b = baixo, cd = diagonal para cima e direita, etc...): ");
-  scanf(" %s", direcao);
-}
+// void entradaDados()
+// // Registra o valor das casas e da direção pelo usuário
+// {
+//   printf("Digite o número de casas: ");
+//   scanf("%i", &casas);
+//   printf("Digite a direção (c = cima, b = baixo, cd = diagonal para cima e direita, etc...): ");
+//   scanf(" %s", direcao);
+// }
 
 int main()
 {
-  entradaDados();
+  // entradaDados();
 
   printf("Iniciando o movimento das peças...\n");
 
